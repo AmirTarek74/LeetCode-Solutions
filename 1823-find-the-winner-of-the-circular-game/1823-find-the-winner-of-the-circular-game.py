@@ -8,9 +8,6 @@ class Solution:
                 idx = idx%len(lst)
             temp = lst.pop(idx)
             
-            #idx = (idx+1)
-           # if idx> len(lst)-1:
-              #  idx = idx%len(lst)
         return lst[0]
         
         
