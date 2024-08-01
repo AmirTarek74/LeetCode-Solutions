@@ -5,25 +5,18 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        if(len(s)!=len(t)):
+        if len(s)!=len(t):
             return False
         else:
-            d={}
-            d2={}
-            for c in s:
-                if(c not in d.keys()):
-                    d[c]=1
-                else:
-                    d[c]+=1
-            for c in t:
-                if(c not in d2.keys()):
-                    d2[c]=1
-                else:
-                    d2[c]+=1
-            for c in t:
-                if c not in d.keys():
+            d1 = {}
+            d2 = {}
+            for i in range(len(t)):
+                d1[s[i]] = d1.get(s[i],0) + 1
+                d2[t[i]] = d2.get(t[i],0) + 1
+            for k in list(d1.keys()):
+                if k not in list(d2.keys()):
                     return False
-                elif (d[c]!=d2[c]):
+                elif d1[k]!=d2[k]:
                     return False
-        return True
+            return True
         
