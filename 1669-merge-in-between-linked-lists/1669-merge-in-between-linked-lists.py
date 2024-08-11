@@ -8,23 +8,23 @@ class Solution:
         
         head = list1
         counter = 0
-        temp = head
-        temp2 = head
+        ptr_a = head
+        ptr_b = head
         while counter!=b:
             if counter<a-1:
-                temp = temp.next
-                temp2 = temp
+                ptr_a = ptr_a.next
+                ptr_b = ptr_a
                 counter+=1
             else:
                 
-                temp2 = temp2.next
+                ptr_b = ptr_b.next
                 counter+=1
         if list2:
-            temp.next= list2
-            temp = temp.next
-            while temp.next!=None:
-                temp = temp.next
-        temp.next = temp2.next
+            ptr_a.next= list2
+            ptr_a = ptr_a.next
+            while ptr_a.next!=None:
+                ptr_a = ptr_a.next
+        ptr_a.next = ptr_b.next
         
         return head
                 
