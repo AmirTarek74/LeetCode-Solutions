@@ -5,10 +5,10 @@ class Solution:
         pair.sort()
         out = ""
         for p in pair:
-            if p !=pair[-1]:
-                out += p[1]+ ' '
-            else:
-                out += p[1]
+            
+            out += p[1]+ ' '
+           
+              
         
-        return out
+        return out[0:-1]
         
