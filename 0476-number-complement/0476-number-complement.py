@@ -1,21 +1,18 @@
 class Solution:
     def findComplement(self, num: int) -> int:
         binary = ""
-        while num>0:
-            binary += str(num%2)
+        while num!=0:
+            if num%2==0:
+                binary+='1'
+            else:
+                binary +='0'
             num = num // 2
         #binary = binary[::-1]
-        comp = ''
-        for i in range(len(binary)):
-            if binary[i]=='0':
-                comp += '1'
-            else:
-                comp += '0'
         
-        #comp = comp[::-1]
-        
+        idx = 0
         ans = 0
-        for idx in range(len(comp)):
-            ans += (int(comp[idx]) * (2**idx))
+        while idx<len(binary):
+            ans += (int(binary[idx]) * (2**idx))
+            idx +=1
         
         return ans
