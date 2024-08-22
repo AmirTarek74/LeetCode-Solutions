@@ -1,29 +1,21 @@
-class Solution(object):
-    def findComplement(self, num):
-        def decimal_to_binary(n):
-            if n == 0:
-                return "0"
-            binary = ""
-            while n > 0:
-                binary = str(n % 2) + binary
-                n = n // 2
-            return binary
-
-        def binary_to_decimal(binary_str):
-            decimal = 0
-            binary_str = binary_str[::-1]  # Reverse the string to process from right to left
-            for i in range(len(binary_str)):
-                decimal += int(binary_str[i]) * (2 ** i)
-            return decimal
-
-        binary = decimal_to_binary(num)
-        n = len(binary)
-
-        complement = ''
-        for i in range(n):
-            if binary[i] == '0':
-                complement += '1'
+class Solution:
+    def findComplement(self, num: int) -> int:
+        binary = ""
+        while num>0:
+            binary += str(num%2)
+            num = num // 2
+        #binary = binary[::-1]
+        comp = ''
+        for i in range(len(binary)):
+            if binary[i]=='0':
+                comp += '1'
             else:
-                complement += '0'
-
-        return binary_to_decimal(complement)        
+                comp += '0'
+        
+        #comp = comp[::-1]
+        
+        ans = 0
+        for idx in range(len(comp)):
+            ans += (int(comp[idx]) * (2**idx))
+        
+        return ans
