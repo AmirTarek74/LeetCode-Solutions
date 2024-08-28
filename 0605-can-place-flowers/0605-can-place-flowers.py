@@ -13,8 +13,9 @@ class Solution:
                     n-=1
                     flowerbed[i] = 1
             
-        
-        
-        return n==0
+        if n==0:
+            return True
+        else:
+            return False
                 
         
