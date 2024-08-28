@@ -6,7 +6,7 @@ class Solution:
         for i in range(len(flowerbed)):
             if n==0:
                 return True
-            elif flowerbed[i]==0 :
+            if flowerbed[i]==0 :
                 l = (i==0) or (flowerbed[i-1]==0)
                 r = (i==len(flowerbed)-1) or (flowerbed[i+1]==0)     
                 if l and r:
