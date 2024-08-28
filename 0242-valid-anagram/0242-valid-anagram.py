@@ -8,11 +8,15 @@ class Solution(object):
         if len(s)!=len(t):
             return False
         else:
-           
-            for c in s:
-                t1 = s.count(c)
-                t2 = t.count(c)
-                if t1!=t2:
+            d1 = {}
+            d2 = {}
+            for i in range(len(t)):
+                d1[s[i]] = d1.get(s[i],0) + 1
+                d2[t[i]] = d2.get(t[i],0) + 1
+            for k in list(d1.keys()):
+                if k not in list(d2.keys()):
+                    return False
+                elif d1[k]!=d2[k]:
                     return False
             return True
         
