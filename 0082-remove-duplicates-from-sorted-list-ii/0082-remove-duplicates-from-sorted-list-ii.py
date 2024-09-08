@@ -21,8 +21,7 @@ class Solution:
                 prev = head
                 curr = nxt
             else:
-                prev.next = nxt
-                #prev = curr
+                prev.next = nxt                
                 curr = nxt
         
         return head
