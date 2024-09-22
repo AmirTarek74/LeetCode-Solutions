@@ -6,13 +6,12 @@ class Solution:
             return [nums[:]]
         
         for i in range(len(nums)):
-            value = nums.pop(0)
-            
+            n = nums.pop(0)
             perms = self.permute(nums)
             
-            for p in perms:
-                p.append(value)
+            for perm in perms:
+                perm.append(n)
             res.extend(perms)
-            nums.append(value)
-        
+            nums.append(n)
+    
         return res
