@@ -12,10 +12,11 @@ class Solution:
         res = []
         while q:
             n = len(q)
-            level_values = []
+            cur_max = float("-inf")
             
             for _ in range(n):
                 node = q.popleft()
+                cur_max = max(cur_max, node.val)
                 
                 if node.left:
                     q.append(node.left)
@@ -23,9 +24,9 @@ class Solution:
                 if node.right:
                     q.append(node.right)
                 
-                level_values.append(node.val)
+                
             
-            res.append(max(level_values))
+            res.append(cur_max)
         
         return res
         
